@@ -14,7 +14,7 @@ $(document).ready(function() {
 		$('.form2').addClass("active");
 	});
 
-	$('.signup').click(function(e) {
+	$('.form2').submit(function() {
 		//e.preventDefault();
 
 		$.ajax({
