@@ -14,6 +14,7 @@ $(document).ready(function() {
 		$('.form2').addClass("active");
 	});
 
+
 	$('.form2').submit(function() {
 		//e.preventDefault();
 
