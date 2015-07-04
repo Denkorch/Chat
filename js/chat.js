@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			url: 'http://api.prolaby.com/api/post/newuser',
-            type: "POST",
+            type: "GET",
             data: {
             	login: $("#signUpName").val(),
             	pass: $("#signUpPass").val(),
