@@ -15,8 +15,8 @@ $(document).ready(function() {
 	});
 
 
-	$('.form2').submit(function() {
-		//e.preventDefault();
+	$('.form2').submit(function(e) {
+		e.preventDefault();
 
 		$.ajax({
 			url: 'http://api.prolaby.com/api/post/newuser',
@@ -38,7 +38,6 @@ $(document).ready(function() {
 		if (conf.value != document.getElementById('signUpPass').value) {
 			alert('Password should match!')
 			};
-        return false;
 	});
 
 
