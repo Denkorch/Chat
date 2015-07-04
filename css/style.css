@@ -1,0 +1,70 @@
+#carousel {
+	width: 565px;
+	margin: 0 auto;
+}
+/*.header img {
+	float: left;
+	margin-right: 20px;
+}*/
+
+.clear{
+	clear: both;
+}
+.head-align h1, img {
+	margin: 0 auto;
+	text-align: center;
+}
+.formInput {
+	width: 350px;
+}
+.choose-method p{
+	width: 150px;
+	margin: 50px auto 20px;
+}
+p.log {
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  padding-top: 7px;
+}
+.form-horizontal {
+	margin-left: 10%;
+	display: none;
+}
+.form-horizontal.active {
+	display: block;
+}
+.links:focus {
+	color: #32C832;
+	text-decoration: none;
+}
+.repeat {
+	padding-top: 0px !important;
+}
+.forgot {
+	margin-left: 25px;
+}
+
+/*index Page*/
+.center {
+	margin-top: 8px;
+}
+.user-list {
+	border: 1px solid grey;
+	overflow: auto;
+}
+
+/*js styles*/
+.list-group-item {
+	position: relative;
+}
+
+span.status {
+	width: 40px;
+	height: 10px;
+	font-size: 10px;
+	position: absolute;
+	right: 0;
+}
