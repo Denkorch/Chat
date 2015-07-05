@@ -52,7 +52,7 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	window.location.replace("http://denkorch.github.io");
+            	window.location.href = "http://denkorch.github.io";
             },
             error: function() {
             	alert('GetUser Ошибка доступа к базе!');
