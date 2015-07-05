@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			url: 'http://api.prolaby.com/api/post/newuser',
-            type: "POST",
+            type: "GET",
             data: {
             	login: $("#signUpName").val(),
             	pass: $("#signUpPass").val(),
@@ -28,6 +28,31 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
+            },
+            error: function() {
+            	alert('GetUser Ошибка доступа к базе!');
+            }
+        });
+
+		var conf = document.getElementById('signUpPass2');
+		if (conf.value != document.getElementById('signUpPass').value) {
+			alert('Password should match!')
+			};
+	});
+
+	$('.form1').submit(function(e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: 'http://api.prolaby.com/api/get/user',
+            type: "GET",
+            data: {
+            	login: $("#logInName").val(),
+            	pass: $("#logInPass").val()
+            },
+            success: function(data){
+            	console.log(data);
+            	window.location.replace("http://denkorch.github.io");
             },
             error: function() {
             	alert('GetUser Ошибка доступа к базе!');
