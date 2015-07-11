@@ -51,7 +51,11 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	window.location.href = "http://denkorch.github.io";
+            	for (var i = 0; i < contactList.length; i++) {
+            		if ($("#logInName").val() == contactList[i].name && $("#logInPass").val() == contactList[i].pass){
+            		window.location.href = "http://denkorch.github.io";
+            		};
+            	}
             },
             error: function() {
             	alert('GetUser Ошибка доступа к базе!');
@@ -82,7 +86,7 @@ $(document).ready(function() {
 	//Index Page
 
 	//Upload contact list
-
+	var contactList;
 	(function($){
 		$.fn.AddContactList = function(){
 
@@ -98,9 +102,7 @@ $(document).ready(function() {
                 url: 'http://api.prolaby.com/api/get/allusers',
                 type: "GET",
                 success: function(data){
-						// !!!Check!!!
-						window.contacts = data;
-						// !!!Check!!!
+						contactList = data;
                 	for (var i = 0; i < data.length; i++) {
 						$('.list-group').append('<li class="list-group-item">' + data[i].name + '<span class="status">' + status(data[i].online) + '</span>' + '</li>')
 						$('li.list-group-item').eq(i).attr("data-id", data[i].id);
