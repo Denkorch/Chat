@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	//Log-in/Sign-up Page
 
 	$('.log-js').click(function(event){
@@ -61,7 +60,7 @@ $(document).ready(function() {
 
 		var conf = document.getElementById('signUpPass2');
 		if (conf.value != document.getElementById('signUpPass').value) {
-			alert('Password should match!')
+			alert('Password doesn`t match!')
 			};
 	});
 
@@ -99,6 +98,9 @@ $(document).ready(function() {
                 url: 'http://api.prolaby.com/api/get/allusers',
                 type: "GET",
                 success: function(data){
+						// !!!Check!!!
+						window.contacts = data;
+						// !!!Check!!!
                 	for (var i = 0; i < data.length; i++) {
 						$('.list-group').append('<li class="list-group-item">' + data[i].name + '<span class="status">' + status(data[i].online) + '</span>' + '</li>')
 						$('li.list-group-item').eq(i).attr("data-id", data[i].id);
@@ -112,6 +114,4 @@ $(document).ready(function() {
 		}
 	})(jQuery);
 	$('.user-list').AddContactList();
-
-	
 });
