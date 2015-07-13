@@ -46,16 +46,15 @@ $(document).ready(function() {
 			url: 'http://api.prolaby.com/api/get/user',
             type: "GET",
             data: {
-            	login: $("#logInName").val(),
-            	pass: $("#logInPass").val()
+            	login: $(".login").val(),
+            	pass: $(".logPass").val()
             },
             success: function(data){
-            	console.log(data);
-            	for (var i = 0; i < contactList.length; i++) {
-            		if ($("#logInName").val() == contactList[i].name && $("#logInPass").val() == contactList[i].pass){
+            	if (data) {
             		window.location.href = "http://denkorch.github.io";
-            		};
-            	}
+            	} else {
+            		window.location.reload();
+            	};
             },
             error: function() {
             	alert('GetUser Ошибка доступа к базе!');
@@ -86,7 +85,7 @@ $(document).ready(function() {
 	//Index Page
 
 	//Upload contact list
-	var contactList;
+
 	(function($){
 		$.fn.AddContactList = function(){
 
@@ -102,7 +101,6 @@ $(document).ready(function() {
                 url: 'http://api.prolaby.com/api/get/allusers',
                 type: "GET",
                 success: function(data){
-						contactList = data;
                 	for (var i = 0; i < data.length; i++) {
 						$('.list-group').append('<li class="list-group-item">' + data[i].name + '<span class="status">' + status(data[i].online) + '</span>' + '</li>')
 						$('li.list-group-item').eq(i).attr("data-id", data[i].id);
@@ -112,7 +110,6 @@ $(document).ready(function() {
                     alert('GetUser Ошибка доступа к базе!');
                 }
             });
-
 		}
 	})(jQuery);
 	$('.user-list').AddContactList();
