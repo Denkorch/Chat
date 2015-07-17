@@ -51,6 +51,9 @@ $(document).ready(function() {
             },
             success: function(data){
             	if (data) {
+            		var login = $(".login").val();
+            		document.cookie = "userName = " + login;
+            		document.cookie = "userId = " + data;
             		window.location.href = "http://denkorch.github.io";
             	} else {
             		window.location.reload();
@@ -101,6 +104,10 @@ $(document).ready(function() {
                 url: 'http://api.prolaby.com/api/get/allusers',
                 type: "GET",
                 success: function(data){
+                	var test = [];
+                		data.forEach(function(){
+                	 console.log(name);
+                		});
                 	for (var i = 0; i < data.length; i++) {
 						$('.list-group').append('<li class="list-group-item">' + data[i].name + '<span class="status">' + status(data[i].online) + '</span>' + '</li>')
 						$('li.list-group-item').eq(i).attr("data-id", data[i].id);
