@@ -29,7 +29,7 @@ $(document).ready(function() {
             	console.log(data);
             },
             error: function() {
-            	alert('GetUser Ошибка доступа к базе!');
+            	alert('SignUp: Ошибка доступа к базе!');
             }
         });
 
@@ -60,7 +60,7 @@ $(document).ready(function() {
             	};
             },
             error: function() {
-            	alert('GetUser Ошибка доступа к базе!');
+            	alert('Login: Ошибка доступа к базе!');
             }
         });
 
@@ -88,7 +88,6 @@ $(document).ready(function() {
 	//Index Page
 
 	//Upload contact list
-
 	(function($){
 		$.fn.AddContactList = function(){
 
@@ -110,10 +109,49 @@ $(document).ready(function() {
 					};
                 },
                 error: function() {
-                    alert('GetUser Ошибка доступа к базе!');
+                    alert('ContactList: Ошибка доступа к базе!');
                 }
             });
 		}
 	})(jQuery);
 	$('.user-list').AddContactList();
+
+	//Відправка повідомлення
+	$(".recipient").focusout(function(){
+		var value = $(this).val();
+		$.ajax({
+                url: 'http://api.prolaby.com/api/get/allusers',
+                type: "GET",
+                success: function(data){
+                	for (var i = 0; i < data.length; i++) {
+            			if (value == data[i].name) {
+            				document.cookie = "recId = " + data[i].id;
+            				i = data.length;
+            			};
+            		};
+                },
+                error: function() {
+                    alert('ContactList: Ошибка доступа к базе!');
+                }
+            });
+	})
+
+	$('.msg_form').submit(function(e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: 'http://api.prolaby.com/api/post/message',
+            type: "GET",
+            data: {
+            	text: $(".text-message").val(),
+            	id_sender: getCookie("userId"),
+            	id_recipient: getCookie("recId")
+            },
+            success: function(data){
+            },
+            error: function() {
+            	alert('SendMessage: Ошибка доступа к базе!');
+            }
+        });
+	});
 });
