@@ -53,7 +53,7 @@ $(document).ready(function() {
             	if (data) {
             		var login = $(".login").val();
             		document.cookie = "userName = " + login;
-            		console.log(data);
+            		document.cookie = "userId = " + data[0].id;
             		window.location.href = "http://denkorch.github.io";
             	} else {
             		window.location.reload();
