@@ -137,7 +137,7 @@ $(document).ready(function() {
 	})
 
 	$('.msg_form').submit(function(e) {
-		e.preventDefault();
+		//e.preventDefault();
 
 		$.ajax({
 			url: 'http://api.prolaby.com/api/post/message',
@@ -148,6 +148,7 @@ $(document).ready(function() {
             	id_recipient: getCookie("recId")
             },
             success: function(data){
+            	console.log(data);
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
