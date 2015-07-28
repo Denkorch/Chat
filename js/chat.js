@@ -145,7 +145,7 @@ $(document).ready(function() {
 
 	//Відправка повідомлення
 	$('.msg_form').submit(function(e) {
-		//e.preventDefault();
+		e.preventDefault();
 
 		$.ajax({
 			url: 'http://api.prolaby.com/api/post/message',
