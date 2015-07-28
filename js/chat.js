@@ -116,7 +116,7 @@ $(document).ready(function() {
 	})(jQuery);
 	$('.user-list').AddContactList();
 
-	//Відправка повідомлення
+	//Отримати id_recipient
 	$(".recipient").focusout(function(){
 		var value = $(this).val();
 		$.ajax({
@@ -136,6 +136,14 @@ $(document).ready(function() {
             });
 	})
 
+	function getCookie(name) {
+  		var matches = document.cookie.match(new RegExp(
+    		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  		));
+  		return matches ? decodeURIComponent(matches[1]) : undefined;
+	};
+
+	//Відправка повідомлення
 	$('.msg_form').submit(function(e) {
 		//e.preventDefault();
 
