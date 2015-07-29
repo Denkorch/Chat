@@ -55,8 +55,6 @@ $(document).ready(function() {
             		document.cookie = "userName = " + login;
             		document.cookie = "userId = " + data[0].id;
             		window.location.href = "http://denkorch.github.io";
-            		//додати ім`я юзера
-            		$('.header').append('<span class="" style:"display:inline-block;position:absolute;right:0;top:0;height:50px;color:#fff;">' + getCookie("userName") + '</span>');
             	} else {
             		window.location.reload();
             	};
@@ -70,6 +68,8 @@ $(document).ready(function() {
 		if (conf.value != document.getElementById('signUpPass').value) {
 			alert('Password doesn`t match!')
 			};
+	    //додати ім`я юзера
+	    $('.header').append('<span class="" style:"display:inline-block;position:absolute;right:0;top:0;height:50px;color:#fff;">' + getCookie("userName") + '</span>');
 	});
 
 
