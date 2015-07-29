@@ -56,8 +56,7 @@ $(document).ready(function() {
             		document.cookie = "userId = " + data[0].id;
             		window.location.href = "http://denkorch.github.io";
             		//додати ім`я юзера
-            		$('.header').append('<div class="" style:position:absolute;right:0;top:0;height:50px;color:#fff;">' +
-            		+ "test" + '</div>')
+            		$('.header').append('<span class="" style:"display:inline-block;position:absolute;right:0;top:0;height:50px;color:#fff;">' + getCookie("userName") + '</span>');
             	} else {
             		window.location.reload();
             	};
