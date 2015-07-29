@@ -165,7 +165,7 @@ $(document).ready(function() {
 	});
 
 	//Отримати повідоммлення
-	$('.rd-msg').click(function(e) {
+	$('.rd-my-msg').click(function(e) {
 		e.preventDefault();
 
 		$.ajax({
@@ -183,5 +183,22 @@ $(document).ready(function() {
         });
 	});
 
+	$('.rd-me-msg').click(function(e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: 'http://api.prolaby.com/api/get/messages',
+            type: "GET",
+            data: {
+            	id_user: getCookie("recId")
+            },
+            success: function(data){
+            	console.log(data);
+            },
+            error: function() {
+            	alert('SendMessage: Ошибка доступа к базе!');
+            }
+        });
+	});
 
 });
