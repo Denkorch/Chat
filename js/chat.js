@@ -91,6 +91,8 @@ $(document).ready(function() {
 	(function($){
 		$.fn.AddContactList = function(){
 
+			alert(getCookie("userName"));
+
 			var status = function(arg) {
 				if (!arg) {
 					return("offline");
