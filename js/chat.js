@@ -153,7 +153,7 @@ $(document).ready(function() {
                 success: function(data){
                 	for (var i = 0; i < data.length; i++) {
             			if (myName == data[i].name) {
-            				alert(data[i].id);
+            				console.log(data[i].id);
             				i = data.length;
             			};
             		};
