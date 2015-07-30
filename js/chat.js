@@ -91,8 +91,6 @@ $(document).ready(function() {
 	(function($){
 		$.fn.AddContactList = function(){
 
-			alert(getCookie("userName"));
-
 			var status = function(arg) {
 				if (!arg) {
 					return("offline");
@@ -115,6 +113,9 @@ $(document).ready(function() {
                 }
             });
 		}
+
+		$('.header').append('<span class="me_icon">' + '<a href="#" title="You are logged in as: ">' + getCookie("userName") + '</a>' + '</span>');
+
 	})(jQuery);
 	$('.user-list').AddContactList();
 

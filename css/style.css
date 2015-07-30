@@ -68,3 +68,22 @@ span.status {
 	position: absolute;
 	right: 0;
 }
+
+span.me_icon {
+	height: 50px;
+	font-size: 10px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #fff;
+}
+
+span.me_icon a {
+	font-size: 13px;
+	color: #fff;
+	display: block;
+	padding: 15px 15px;
+	text-decoration: none;
+
+}
