@@ -153,7 +153,7 @@ $(document).ready(function() {
                 success: function(data){
                 	for (var i = 0; i < data.length; i++) {
             			if (myName == data[i].name) {
-            				console.log(data[i].id);
+            				return data[i].id;
             				i = data.length;
             			};
             		};
@@ -189,7 +189,7 @@ $(document).ready(function() {
 	$('.rd-msg').click(function(e) {
 		e.preventDefault();
 
-		getMyNameId(getCookie("userName"));
+		alert(getMyNameId(getCookie("userName")));
 
 		// $.ajax({
 		// 	url: 'http://api.prolaby.com/api/get/messages',
