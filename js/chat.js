@@ -137,13 +137,31 @@ $(document).ready(function() {
                     alert('ContactList: Ошибка доступа к базе!');
                 }
             });
-	})
+	});
 
 	function getCookie(name) {
   		var matches = document.cookie.match(new RegExp(
     		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
   		));
   		return matches ? decodeURIComponent(matches[1]) : undefined;
+	};
+
+	function getMyNameId(myName) {
+		$.ajax({
+                url: 'http://api.prolaby.com/api/get/allusers',
+                type: "GET",
+                success: function(data){
+                	for (var i = 0; i < data.length; i++) {
+            			if (myName == data[i].name) {
+            				return data[i].id;
+            				i = data.length;
+            			};
+            		};
+                },
+                error: function() {
+                    alert('ContactList: Ошибка доступа к базе!');
+                }
+            });
 	};
 
 	//Відправка повідомлення
@@ -159,7 +177,7 @@ $(document).ready(function() {
             	id_recipient: getCookie("recId")
             },
             success: function(data){
-            	console.log(data.length);
+            	console.log(data);
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
@@ -167,7 +185,7 @@ $(document).ready(function() {
         });
 	});
 
-	//Отримати повідоммлення
+	//Отримати всі повідоммлення
 	$('.rd-msg').click(function(e) {
 		e.preventDefault();
 
@@ -175,7 +193,7 @@ $(document).ready(function() {
 			url: 'http://api.prolaby.com/api/get/messages',
             type: "GET",
             data: {
-            	id_user: getCookie("userId")
+            	id_user: getMyNameId(getCookie("userName"))
             },
             success: function(data){
             	console.log(data);
