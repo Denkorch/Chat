@@ -153,7 +153,7 @@ $(document).ready(function() {
                 success: function(data){
                 	for (var i = 0; i < data.length; i++) {
             			if (myName == data[i].name) {
-            				return data[i].id;
+            				alert(data[i].id);
             				i = data.length;
             			};
             		};
@@ -189,19 +189,21 @@ $(document).ready(function() {
 	$('.rd-msg').click(function(e) {
 		e.preventDefault();
 
-		$.ajax({
-			url: 'http://api.prolaby.com/api/get/messages',
-            type: "GET",
-            data: {
-            	id_user: getMyNameId(getCookie("userName"))
-            },
-            success: function(data){
-            	console.log(data);
-            },
-            error: function() {
-            	alert('SendMessage: Ошибка доступа к базе!');
-            }
-        });
+		getMyNameId(getCookie("userName"));
+
+		// $.ajax({
+		// 	url: 'http://api.prolaby.com/api/get/messages',
+  //           type: "GET",
+  //           data: {
+  //           	id_user: getCookie("userId")
+  //           },
+  //           success: function(data){
+  //           	console.log(data);
+  //           },
+  //           error: function() {
+  //           	alert('SendMessage: Ошибка доступа к базе!');
+  //           }
+  //       });
 	});
 
 });
