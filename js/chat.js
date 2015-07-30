@@ -159,7 +159,7 @@ $(document).ready(function() {
             	id_recipient: getCookie("recId")
             },
             success: function(data){
-            	console.log(data);
+            	console.log(data.length);
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
