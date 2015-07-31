@@ -188,22 +188,19 @@ $(document).ready(function() {
 	//Отримати всі повідоммлення
 	$('.rd-msg').click(function(e) {
 		e.preventDefault();
-
-		alert(getMyNameId(getCookie("userName")));
-
-		// $.ajax({
-		// 	url: 'http://api.prolaby.com/api/get/messages',
-  //           type: "GET",
-  //           data: {
-  //           	id_user: getCookie("userId")
-  //           },
-  //           success: function(data){
-  //           	console.log(data);
-  //           },
-  //           error: function() {
-  //           	alert('SendMessage: Ошибка доступа к базе!');
-  //           }
-  //       });
+		$.ajax({
+			url: 'http://api.prolaby.com/api/get/messages',
+            type: "GET",
+            data: {
+            	id_user: getMyNameId(getCookie("userName"))
+            },
+            success: function(data){
+            	console.log(data);
+            },
+            error: function() {
+            	alert('SendMessage: Ошибка доступа к базе!');
+            }
+        });
 	});
 
 });
