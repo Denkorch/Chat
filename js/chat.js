@@ -179,7 +179,7 @@ $(document).ready(function() {
             },
             success: function(data){
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + '<a href="#" style="height:100%;width:100%;">' + data[i].name_sender + '</a>' + '</li>');
+					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>');
             	};
             },
             error: function() {
@@ -192,7 +192,7 @@ $(document).ready(function() {
 
 	});
 
-	$('.li-message-list a').click(function() {
+	$('.li-message-list').click(function() {
 		$.ajax({
 			url: 'http://api.prolaby.com/api/get/messages',
             type: "GET",
@@ -201,9 +201,9 @@ $(document).ready(function() {
             },
             success: function(data){
             	alert(document.getElementById('.message-list').childNodes.length);
-            	for (var i = 0; i < document.getElementById('.message-list').childNodes.length; i++) {
+            	// for (var i = 0; i < document.getElementById('.message-list').childNodes.length; i++) {
 
-            	};
+            	// };
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
