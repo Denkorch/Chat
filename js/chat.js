@@ -179,7 +179,7 @@ $(document).ready(function() {
             },
             success: function(data){
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>')ж
+					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>');
 					$('.li-message-list').click(function() {
 						alert($(this).val());
 					});
