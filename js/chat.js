@@ -83,6 +83,7 @@ $(document).ready(function() {
 
 	var h = $(window).height() * 0.75;
 	$('.user-list').css("height", h + 'px');
+	$('.message-list').css("height", h + 'px');
 
 
 	//Index Page
