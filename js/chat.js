@@ -179,7 +179,7 @@ $(document).ready(function() {
             },
             success: function(data){
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>')
+					$('.message-list').append('<li class="list-group-item li-message-list">' + '<a href="#" onClick="readMessage()">' + data[i].name_sender + '</a>' + '</li>')
             	};
             },
             error: function() {
@@ -191,5 +191,8 @@ $(document).ready(function() {
 		$('.message-list').css("visibility", "visible");
 
 	});
+	function readMessage(){
+		alert($(this).val());
+	}
 
 });
