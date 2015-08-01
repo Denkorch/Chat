@@ -210,10 +210,6 @@ $(document).ready(function() {
             	alert('SendMessage: Ошибка доступа к базе!');
             }
         });
-
-		$('.user-list').css("display", "none");
-		$('.message-list').css("visibility", "visible");
-
 	});
 
 });
