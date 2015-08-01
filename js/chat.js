@@ -180,8 +180,10 @@ $(document).ready(function() {
             success: function(data){
             	for (var i = 0; i < data.length; i++) {
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>');
-					$('.li-message-list').click(function() {alert("")});
             	};
+            	$('.li-message-list').click(function() {
+            		alert(document.getElementById('.message-list').childNodes.length)
+            	});
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
