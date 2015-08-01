@@ -194,7 +194,7 @@ $(document).ready(function() {
 
 	$('.li-message-list').click(function(e) {
 		e.preventDefault();
-		alert(document.getElementsByClassName('.message-list').childNodes.length)
+		alert(document.getElementsByClassName('.li-message-list').length)
 		// $.ajax({
 		// 	url: 'http://api.prolaby.com/api/get/messages',
   //           type: "GET",
