@@ -178,6 +178,7 @@ $(document).ready(function() {
             	id_user: getCookie("userId")
             },
             success: function(data){
+            	console.log(data);
             	for (var i = 0; i < data.length; i++) {
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>');
             	};
@@ -190,10 +191,6 @@ $(document).ready(function() {
 		$('.user-list').css("display", "none");
 		$('.message-list').css("visibility", "visible");
 
-	});
-
-	$('.li-message-list').click(function() {
-		alert($(this).val());
-	});
+	});	
 
 });
