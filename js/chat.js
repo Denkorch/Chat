@@ -192,7 +192,7 @@ $(document).ready(function() {
 			url: 'http://api.prolaby.com/api/get/messages',
             type: "GET",
             data: {
-            	id_user: getMyNameId(getCookie("userName"))
+            	id_user: getCookie("userId")
             },
             success: function(data){
             	console.log(data);
