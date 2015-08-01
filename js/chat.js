@@ -192,25 +192,8 @@ $(document).ready(function() {
 
 	});
 
-	$('.li-message-list').click(function(e) {
-		e.preventDefault();
-		alert(document.getElementsByClassName('.li-message-list').length)
-		// $.ajax({
-		// 	url: 'http://api.prolaby.com/api/get/messages',
-  //           type: "GET",
-  //           data: {
-  //           	id_user: getCookie("userId")
-  //           },
-  //           success: function(data){
-  //           	alert(document.getElementById('.message-list').childNodes.length);
-  //           	// for (var i = 0; i < document.getElementById('.message-list').childNodes.length; i++) {
-
-  //           	// };
-  //           },
-  //           error: function() {
-  //           	alert('SendMessage: Ошибка доступа к базе!');
-  //           }
-  //       });
+	$('.li-message-list').click(function() {
+		alert($(this).val());
 	});
 
 });
