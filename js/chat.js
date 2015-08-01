@@ -181,9 +181,6 @@ $(document).ready(function() {
             	for (var i = 0; i < data.length; i++) {
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>');
             	};
-            	$('.li-message-list').click(function() {
-            		alert(document.getElementById('.message-list').childNodes.length)
-            	});
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
@@ -196,22 +193,23 @@ $(document).ready(function() {
 	});
 
 	$('.li-message-list').click(function() {
-		$.ajax({
-			url: 'http://api.prolaby.com/api/get/messages',
-            type: "GET",
-            data: {
-            	id_user: getCookie("userId")
-            },
-            success: function(data){
-            	alert(document.getElementById('.message-list').childNodes.length);
-            	// for (var i = 0; i < document.getElementById('.message-list').childNodes.length; i++) {
+		alert(document.getElementById('.message-list').childNodes.length)
+		// $.ajax({
+		// 	url: 'http://api.prolaby.com/api/get/messages',
+  //           type: "GET",
+  //           data: {
+  //           	id_user: getCookie("userId")
+  //           },
+  //           success: function(data){
+  //           	alert(document.getElementById('.message-list').childNodes.length);
+  //           	// for (var i = 0; i < document.getElementById('.message-list').childNodes.length; i++) {
 
-            	// };
-            },
-            error: function() {
-            	alert('SendMessage: Ошибка доступа к базе!');
-            }
-        });
+  //           	// };
+  //           },
+  //           error: function() {
+  //           	alert('SendMessage: Ошибка доступа к базе!');
+  //           }
+  //       });
 	});
 
 });
