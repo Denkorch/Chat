@@ -178,6 +178,9 @@ $(document).ready(function() {
             	id_user: getCookie("userId")
             },
             success: function(data){
+				function readMessage(){
+					alert($(this).val());
+				};
             	for (var i = 0; i < data.length; i++) {
 					$('.message-list').append('<li class="list-group-item li-message-list">' + '<a href="#" onClick="readMessage()">' + data[i].name_sender + '</a>' + '</li>')
             	};
@@ -191,8 +194,5 @@ $(document).ready(function() {
 		$('.message-list').css("visibility", "visible");
 
 	});
-	function readMessage(){
-		alert($(this).val());
-	}
 
 });
