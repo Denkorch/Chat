@@ -104,8 +104,8 @@ $(document).ready(function() {
                 type: "GET",
                 success: function(data){
                 	for (var i = 0; i < data.length; i++) {
-						$('.list-group').append('<li class="list-group-item">' + data[i].name + '<span class="status">' + status(data[i].online) + '</span>' + '</li>')
-						$('li.list-group-item').eq(i).attr("data-id", data[i].id);
+						$('.user-list').append('<li class="list-group-item li-user-list">' + data[i].name + '<span class="status">' + status(data[i].online) + '</span>' + '</li>')
+						$('li.li-user-list').eq(i).attr("data-id", data[i].id);
 					};
                 },
                 error: function() {
@@ -146,24 +146,6 @@ $(document).ready(function() {
   		return matches ? decodeURIComponent(matches[1]) : undefined;
 	};
 
-	function getMyNameId(myName) {
-		$.ajax({
-                url: 'http://api.prolaby.com/api/get/allusers',
-                type: "GET",
-                success: function(data){
-                	for (var i = 0; i < data.length; i++) {
-            			if (myName == data[i].name) {
-            				return data[i].id;
-            				i = data.length;
-            			};
-            		};
-                },
-                error: function() {
-                    alert('ContactList: Ошибка доступа к базе!');
-                }
-            });
-	};
-
 	//Відправка повідомлення
 	$('.msg_form').submit(function(e) {
 		e.preventDefault();
@@ -195,12 +177,18 @@ $(document).ready(function() {
             	id_user: getCookie("userId")
             },
             success: function(data){
-            	console.log(data);
+            	for (var i = 0; i < data.length; i++) {
+					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>')
+            	};
             },
             error: function() {
             	alert('SendMessage: Ошибка доступа к базе!');
             }
         });
+
+		$('.user-list').css("display", "none");
+		$('.message-list').css("visibility", "visible");
+
 	});
 
 });
