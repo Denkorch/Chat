@@ -168,7 +168,7 @@ $(document).ready(function() {
         });
 	});
 
-	//Отримати всі повідоммлення
+	//Повідоммлення
 	$('.rd-msg').click(function(e) {
 		e.preventDefault();
 		$.ajax({
@@ -178,11 +178,11 @@ $(document).ready(function() {
             	id_user: getCookie("userId")
             },
             success: function(data){
-				function readMessage(){
-					alert($(this).val());
-				};
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + '<a href="#" onClick="readMessage()">' + data[i].name_sender + '</a>' + '</li>')
+					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>')ж
+					$('.li-message-list').click(function() {
+						alert($(this).val());
+					});
             	};
             },
             error: function() {
