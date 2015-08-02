@@ -183,11 +183,7 @@ $(document).ready(function() {
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
 				$( ".li-message-list" ).on( "click", function() {
-					for (var i = 0; i < $('.li-message-list').length; i++) {
-						if ($('.li-message-list').eq(i).data('clicked')) {
-							alert(i);
-						};
-					};
+							alert($(this).index()-1);
 				});
 			},
 			error: function() {
