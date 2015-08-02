@@ -193,7 +193,7 @@ $(document).ready(function() {
 
 	});
 
-	document.getElementsByClassName(".li-message-list").addEventListener("click", showMessage);
+	$('.message-list').getElementsByClassName(".li-message-list").addEventListener("click", showMessage);
 	
 	function showMessage() {
 		alert("test");
