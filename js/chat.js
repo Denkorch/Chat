@@ -181,9 +181,6 @@ $(document).ready(function() {
             	console.log(data);
             	for (var i = 0; i < data.length; i++) {
 					$('.message-list').append('<li class="list-group-item li-message-list" onclick="showMessage()">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
-					function showMessage() {
-					alert("test");
-					};
 				};
 			},
 			error: function() {
@@ -195,5 +192,13 @@ $(document).ready(function() {
 		$('.message-list').css("display", "block");
 
 	});
+
+	function showMessage() {
+		for (var i = 0; i < $('.li-message-list').length; i++) {
+			if ($('.li-message-list')[i].data('clicked')) {
+				alert(i);
+			};
+		};
+	};
 
 });
