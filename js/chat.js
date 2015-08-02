@@ -180,7 +180,7 @@ $(document).ready(function() {
             success: function(data){
             	console.log(data);
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
+					$('.message-list').append('<li class="list-group-item li-message-list" onclick="showMessage()">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
             	};
             },
             error: function() {
@@ -193,8 +193,8 @@ $(document).ready(function() {
 
 	});
 
-	$(".li-message-list").click(function() {
+	var showMessage = function() {
 		alert("test");
-	});
+	};
 
 });
