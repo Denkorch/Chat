@@ -180,7 +180,7 @@ $(document).ready(function() {
             success: function(data){
             	console.log(data);
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '</li>');
+					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="status">' + data[i].create_date + '</span>'  + '</li>');
             	};
             },
             error: function() {
@@ -189,8 +189,12 @@ $(document).ready(function() {
         });
 
 		$('.user-list').css("display", "none");
-		$('.message-list').css("visibility", "visible");
+		$('.message-list').css("display", "block");
 
-	});	
+	});
+
+	$(".li-message-list").click(function() {
+		alert("test");
+	});
 
 });

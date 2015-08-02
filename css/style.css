@@ -58,7 +58,7 @@ p.log {
 .message-list {
 	border: 1px solid grey;
 	overflow: auto;
-	visibility: hidden;
+	display: none;
 }
 
 /*js styles*/
