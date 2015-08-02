@@ -182,6 +182,9 @@ $(document).ready(function() {
             	for (var i = 0; i < data.length; i++) {
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
+				$( ".li-message-list" ).on( "click", function() {
+					alert( "$( this ).text() ");
+				});
 			},
 			error: function() {
 				alert('SendMessage: Ошибка доступа к базе!');
@@ -191,10 +194,6 @@ $(document).ready(function() {
 		$('.user-list').css("display", "none");
 		$('.message-list').css("display", "block");
 
-	});
-
-	$( ".li-message-list" ).on( "click", function() {
-		alert( "$( this ).text() ");
 	});
 
 	function showMessage() {
