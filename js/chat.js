@@ -193,10 +193,13 @@ $(document).ready(function() {
 
 	});
 
-	$('.message-list').getElementsByClassName(".li-message-list").addEventListener("click", showMessage);
-	
 	function showMessage() {
 		alert("test");
+	};
+
+	var msgItems = document.getElementsByTagName(".li-message-list");
+	for (var i = 0; i < msgItems.length; i++) {
+		addEvent(msgItems[i], 'click', showMessage);
 	};
 
 });
