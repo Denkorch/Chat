@@ -184,7 +184,7 @@ $(document).ready(function() {
 				};
 				$( ".li-message-list" ).on( "click", function() {
 					for (var i = 0; i < $('.li-message-list').length; i++) {
-						if ($('.li-message-list')[i].data('clicked')) {
+						if ($('.li-message-list').eq(i).data('clicked')) {
 							alert(i);
 						};
 					};
