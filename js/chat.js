@@ -180,26 +180,20 @@ $(document).ready(function() {
             success: function(data){
             	console.log(data);
             	for (var i = 0; i < data.length; i++) {
-					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
-            	};
-            },
-            error: function() {
-            	alert('SendMessage: Ошибка доступа к базе!');
-            }
-        });
+					$('.message-list').append('<li class="list-group-item li-message-list" onclick="showMessage()">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
+					function showMessage() {
+					alert("test");
+					};
+				};
+			},
+			error: function() {
+				alert('SendMessage: Ошибка доступа к базе!');
+			}
+		});
 
 		$('.user-list').css("display", "none");
 		$('.message-list').css("display", "block");
 
 	});
-
-	function showMessage() {
-		alert("test");
-	};
-
-	var msgItems = document.getElementsByTagName(".li-message-list");
-	for (var i = 0; i < msgItems.length; i++) {
-		addEvent(msgItems[i], 'click', showMessage);
-	};
 
 });
