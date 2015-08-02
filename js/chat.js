@@ -193,7 +193,7 @@ $(document).ready(function() {
 
 	});
 
-	var showMessage = function() {
+	function showMessage() {
 		alert("test");
 	};
 
