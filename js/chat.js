@@ -179,7 +179,14 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
+            	var myConversations = new Array;
             	for (var i = 0; i < data.length; i++) {
+            		if (!(data[i].name_sender in myConversations)) {
+            			myConversations[i].name = data[i].name_sender;
+            		} else{
+            			return false;
+            		};
+            		console.log(myConversations);
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
 				$( ".li-message-list" ).on( "click", function() {
