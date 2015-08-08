@@ -182,7 +182,7 @@ $(document).ready(function() {
             	var myConversations = new Array;
             	for (var i = 0; i < data.length; i++) {
             		if (!(data[i].name_sender in myConversations)) {
-            			myConversations[i].name = data[i].name_sender;
+            			myConversations[i].name_sender = data[i].name_sender;
             		} else{
             			return false;
             		};
