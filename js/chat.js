@@ -196,7 +196,7 @@ $(document).ready(function() {
             		if (!(name in myConversations)) {
             				// myConversations[name] = name;
             				myConversations[name] = messages(name);
-            				for (var i = 0; i < myConversations.keys().length; i++) {
+            				for (var i = 0; i < Object.keys(myConversations).length; i++) {
             					$('.message-list').append('<li class="list-group-item li-message-list">' + myConversations.eq(i) + '</li>');
             				};
             			};
