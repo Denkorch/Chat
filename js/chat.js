@@ -213,9 +213,9 @@ $(document).ready(function() {
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
 					//console.log(Object.getOwnPropertyNames(myConversations["den"][4]).message);
 					function ulItems(arg) {
-						console.log(Object.keys(myConversations[arg]).length);
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				return '<li class="list-group">' + 'test' + '</li>'
+            				// return '<li class="list-group">' + 'test' + '</li>'
+            				return  'test' + '<br>'
             			};
 					};
 					$(".msg_form").css("display", "none");
