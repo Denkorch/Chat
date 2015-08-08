@@ -211,15 +211,14 @@ $(document).ready(function() {
 				$( ".li-message-list" ).on( "click", function() {
 					var item = $(this).index()-1;
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
-					//console.log(Object.getOwnPropertyNames(myConversations["den"][4]).message);
+					console.log(Object.getOwnPropertyNames(myConversations["den"][4]["message"]));
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				// return '<li class="list-group">' + 'test' + '</li>'
-            				return + 'test' + '<br>' +;
+            				return '<li class="list-group">' + 'test' + '</li>'
             			};
 					};
 					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' ulItems(nick) '</ul>' + '</div>');
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' + ulItems(nick) + '</ul>' + '</div>');
 					// .text(data[$(this).index()-1].text);
 				});
 			},
