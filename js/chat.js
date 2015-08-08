@@ -218,7 +218,6 @@ $(document).ready(function() {
 					};
 					$(".msg_form").css("display", "none");
 					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' + ulItems(nick) + '</ul>' + '</div>');
-					// .text(data[$(this).index()-1].text);
 				});
 			},
 			error: function() {
