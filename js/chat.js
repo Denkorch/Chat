@@ -192,9 +192,7 @@ $(document).ready(function() {
             		if (!(name in myConversations)) {
             				// myConversations[name] = name;
             				myConversations[name] = messages(name);
-            			};
-            			for (var i = 0; i < myConversations.length; i++) {
-            				$('.message-list').append('<li class="list-group-item li-message-list">' + myConversations[i] + '</li>');
+            				$('.message-list').append('<li class="list-group-item li-message-list">' + myConversations[name] + '</li>');
             			};
 					// $('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
