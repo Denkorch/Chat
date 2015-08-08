@@ -184,7 +184,7 @@ $(document).ready(function() {
             					var obj = {};
             					for (var i = 0; i < data.length; i++) {
             						if (data[i].name_sender == name) {
-            							obj.message = data[i].text
+            							obj.[i] = data[i].text
             						};
             					};
             					return obj;
