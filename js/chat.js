@@ -197,7 +197,7 @@ $(document).ready(function() {
             				// myConversations[name] = name;
             				myConversations[name] = messages(name);
             				for (var i = 0; i < Object.keys(myConversations).length; i++) {
-            					$('.message-list').append('<li class="list-group-item li-message-list">' + myConversations.eq(i) + '</li>');
+            					$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
             				};
             			};
 					// $('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
