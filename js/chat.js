@@ -211,7 +211,7 @@ $(document).ready(function() {
 				$( ".li-message-list" ).on( "click", function() {
 					var item = $(this).index()-1;
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
-					console.log(Object.getOwnPropertyNames(myConversations["den"][4])["date"]);
+					console.log(Object.getOwnPropertyNames(myConversations["den"][4])[2]);
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
             				return '<li class="list-group">' + 'test' + '</li>'
