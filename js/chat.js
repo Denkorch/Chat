@@ -179,12 +179,11 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	var myConversations = new Array;
+            	var myConversations = {};
             	for (var i = 0; i < data.length; i++) {
-            		if (!(data[i].name_sender in myConversations)) {
-            			myConversations[i].name_sender = data[i].name_sender;
-            		} else{
-            			return false;
+            		var name = data[i].name_sender;
+            		if (!(name in myConversations)) {
+            			myConversations[i] = name;
             		};
             		console.log(myConversations);
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
