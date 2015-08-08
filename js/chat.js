@@ -182,9 +182,11 @@ $(document).ready(function() {
             	var myConversations = {};
             	var messages = function (arg) {
             					var obj = {};
+            					var count;
             					for (var i = 0; i < data.length; i++) {
             						if (data[i].name_sender == arg) {
-            							obj[i] = data[i].text
+            							obj[count] = data[i].text
+            							count++;
             						};
             					};
             					return obj;
