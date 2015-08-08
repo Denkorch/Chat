@@ -183,7 +183,7 @@ $(document).ready(function() {
             	for (var i = 0; i < data.length; i++) {
             		var name = data[i].name_sender;
             		if (!(name in myConversations)) {
-            				myConversations[name] = name;
+            				myConversations["name"] = name;
             			};
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
