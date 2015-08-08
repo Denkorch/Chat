@@ -184,9 +184,7 @@ $(document).ready(function() {
             					var obj = {};
             					for (var i = 0; i < data.length; i++) {
             						if (data[i].name_sender == name) {
-            							var count = 0;
-            							obj[count] = data[i].text
-            							count++;
+            							obj[i] = data[i].text
             						};
             					};
             					return obj;
