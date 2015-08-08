@@ -212,13 +212,12 @@ $(document).ready(function() {
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				return '<li class="list-group">' + myConversations[arg][i]["message"] + '</li>';
-            				continue;
+            				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
             				// console.log(myConversations[arg][i]["message"]);
             			};
 					};
 					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' + ulItems(nick) + '</ul>' + '</div>');
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + ulItems(nick) + '</ul>' + '</div>');
 				});
 			},
 			error: function() {
