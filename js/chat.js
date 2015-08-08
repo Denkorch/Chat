@@ -216,7 +216,7 @@ $(document).ready(function() {
 					console.log(myConversations["den"]["3"]["message"]);
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				return '<li class="list-group">' + 'test' + '</li>'
+            				return '<li class="list-group">' + myConversations[arg][i]["message"] + '</li>'
             			};
 					};
 					$(".msg_form").css("display", "none");
