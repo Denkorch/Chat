@@ -210,15 +210,14 @@ $(document).ready(function() {
 				console.log(myConversations);
 				$( ".li-message-list" ).on( "click", function() {
 					var item = $(this).index()-1;
-					var nick = Object.keys(myConversations)[item];
-					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' +
-					 function ulItems (item) {
-					 	for (var i = 0; i < Object.keys(myConversations[nick]).length; i++) {
-            				return '<li class="list-group">' + Object.getOwnPropertyNames(myConversations[nick])[i].message + '</li>'
+					var nick = Object.getOwnPropertyNames(myConversations)[item];
+					function ulItems(arg) {
+					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
+            				return '<li class="list-group">' + Object.getOwnPropertyNames(myConversations[arg])[i].message + '</li>'
             			};
-					  } +
-					 '</ul>' + '</div>');
+					};
+					$(".msg_form").css("display", "none");
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' + ulItems(nick) + '</ul>' + '</div>');
 					// .text(data[$(this).index()-1].text);
 				});
 			},
