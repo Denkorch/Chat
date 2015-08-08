@@ -185,9 +185,9 @@ $(document).ready(function() {
             		if (!(name in myConversations)) {
             			myConversations[i] = name;
             		};
-            		console.log(myConversations);
 					$('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
+				console.log(myConversations);
 				$( ".li-message-list" ).on( "click", function() {
 					$(".msg_form").css("display", "none");
 					$(".msg-area").text(data[$(this).index()-1].text);
