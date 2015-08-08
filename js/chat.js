@@ -213,7 +213,7 @@ $(document).ready(function() {
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
 					// console.log(Object.getOwnPropertyNames(myConversations["den"][4])[2]); //???
 					console.log(Object.getOwnPropertyNames(myConversations["den"][3])[1][1]);
-					console.log(myConversations.den.3.message);
+					console.log(myConversations.den.3.message));
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
             				return '<li class="list-group">' + 'test' + '</li>'
