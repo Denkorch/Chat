@@ -180,12 +180,17 @@ $(document).ready(function() {
             success: function(data){
             	console.log(data);
             	var myConversations = {};
-            	var messages = function (arg) {
+            	function messages (arg) {
             					var obj = {};
             					var count = 0;
             					for (var i = 0; i < data.length; i++) {
             						if (data[i].name_sender == arg) {
-            							obj[count] = data[i].text
+            							obj[count] = {
+            								"message": data[i].text,
+            								"date": data[i].create_date,
+            								"sender": data[i].name_sender,
+            								"receiver": data[i].name_recipient,
+            							}
             							count++;
             						};
             					};
