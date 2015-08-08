@@ -209,9 +209,17 @@ $(document).ready(function() {
             	};
 				console.log(myConversations);
 				$( ".li-message-list" ).on( "click", function() {
+					var item = $(this).index()-1;
+					var nick = Object.keys(myConversations)[item];
 					$(".msg_form").css("display", "none");
-					$(".msg-area").text(data[$(this).index()-1].text);
-					//alert($(this).index()-1);
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group">' +
+					 function ulItems (item) {
+					 	for (var i = 0; i < Object.keys(myConversations[nick]).length; i++) {
+            				return '<li class="list-group">' + Object.getOwnPropertyNames(myConversations[nick])[i].message + '</li>'
+            			};
+					  } +
+					 '</ul>' + '</div>');
+					// .text(data[$(this).index()-1].text);
 				});
 			},
 			error: function() {
