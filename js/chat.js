@@ -180,10 +180,10 @@ $(document).ready(function() {
             success: function(data){
             	console.log(data);
             	var myConversations = {};
-            	var messages = function (name) {
+            	var messages = function (arg) {
             					var obj = {};
             					for (var i = 0; i < data.length; i++) {
-            						if (data[i].name_sender == name) {
+            						if (data[i].name_sender == arg) {
             							obj[i] = data[i].text
             						};
             					};
@@ -194,12 +194,12 @@ $(document).ready(function() {
             		if (!(name in myConversations)) {
             				// myConversations[name] = name;
             				myConversations[name] = messages(name);
-            				for (var i = 0; i < Object.keys(myConversations).length; i++) {
-            					$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
-            				};
             			};
 					// $('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
+				for (var i = 0; i < Object.keys(myConversations).length; i++) {
+            		$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
+            	};
 				console.log(myConversations);
 				$( ".li-message-list" ).on( "click", function() {
 					$(".msg_form").css("display", "none");
