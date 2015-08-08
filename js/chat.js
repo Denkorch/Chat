@@ -202,7 +202,6 @@ $(document).ready(function() {
             				// myConversations[name] = name;
             				myConversations[name] = messages(name);
             			};
-					// $('.message-list').append('<li class="list-group-item li-message-list">' + data[i].name_sender + '<span class="msg-time">' + data[i].create_date + '</span>'  + '</li>');
 				};
 				for (var i = 0; i < Object.keys(myConversations).length; i++) {
             		$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
@@ -211,12 +210,10 @@ $(document).ready(function() {
 				$( ".li-message-list" ).on( "click", function() {
 					var item = $(this).index()-1;
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
-					// console.log(Object.getOwnPropertyNames(myConversations["den"][4])[2]); //???
-					console.log(Object.getOwnPropertyNames(myConversations["den"][3])[1][1]);
-					console.log(myConversations["den"]["3"]["message"]);
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				return '<li class="list-group">' + myConversations[arg][i]["message"] + '</li>'
+            				// return '<li class="list-group">' + myConversations[arg][i]["message"] + '</li>'
+            				console.log(myConversations[arg][i]["message"]);
             			};
 					};
 					$(".msg_form").css("display", "none");
