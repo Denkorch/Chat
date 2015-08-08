@@ -215,7 +215,7 @@ $(document).ready(function() {
 					function ulItems(arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
             				// return '<li class="list-group">' + 'test' + '</li>'
-            				return + 'test' + '<br>' +
+            				return + 'test' + '<br>' +;
             			};
 					};
 					$(".msg_form").css("display", "none");
