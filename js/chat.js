@@ -183,7 +183,11 @@ $(document).ready(function() {
             	var messages = function (name) {
             					var obj = {};
             					for (var i = 0; i < data.length; i++) {
-            						if (data[i].name_sender == name) {obj[i] = data[i].text};
+            						if (data[i].name_sender == name) {
+            							var count = 0;
+            							obj[count] = data[i].text
+            							count++;
+            						};
             					};
             					return obj;
             				};
