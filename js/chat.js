@@ -207,24 +207,19 @@ $(document).ready(function() {
             		$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
             	};
 				console.log(myConversations);
-				var ulItems = function (arg) {
+				$( ".li-message-list" ).on( "click", function() {
+					$(".msg-area").empty();
+					var item = $(this).index()-1;
+					var title = Object.getOwnPropertyNames(myConversations)[item];
+					var ulItems = function (arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
             				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
             				console.log(myConversations[arg][i]["message"]);
             			};
 					};
-				$( ".li-message-list" ).on( "click", function() {
-					$(".msg-area").empty();
-					var item = $(this).index()-1;
-					var title = Object.getOwnPropertyNames(myConversations)[item];
-					// var ulItems = function (arg) {
-					//  	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-     //        				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
-     //        				console.log(myConversations[arg][i]["message"]);
-     //        			};
-					// };
 					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + ulItems(title) + '</ul>' + '</div>');
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + '</ul>' + '</div>');
+					ulItems(title);
 				});
 			},
 			error: function() {
