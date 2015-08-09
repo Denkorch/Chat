@@ -208,6 +208,7 @@ $(document).ready(function() {
             	};
 				console.log(myConversations);
 				$( ".li-message-list" ).on( "click", function() {
+					$(".msg-area").empty();
 					var item = $(this).index()-1;
 					var title = Object.getOwnPropertyNames(myConversations)[item];
 					var ulItems = function (arg) {
