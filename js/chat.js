@@ -210,14 +210,14 @@ $(document).ready(function() {
 				$( ".li-message-list" ).on( "click", function() {
 					var item = $(this).index()-1;
 					var nick = Object.getOwnPropertyNames(myConversations)[item];
-					var ulItems = function (nick) {
-					 	for (var i = 0; i < Object.keys(myConversations[nick]).length; i++) {
-            				$(".msg-ul").append('<li class="list-group">' + myConversations[nick][i]["message"] + '</li>');
+					var ulItems = function (arg) {
+					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
+            				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
             				// console.log(myConversations[arg][i]["message"]);
             			};
 					};
 					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + ulItems() + '</ul>' + '</div>');
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + ulItems(nick) + '</ul>' + '</div>');
 				});
 			},
 			error: function() {
