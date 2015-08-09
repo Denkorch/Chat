@@ -210,18 +210,14 @@ $(document).ready(function() {
 				$( ".li-message-list" ).on( "click", function() {
 					var item = $(this).index()-1;
 					var title = Object.getOwnPropertyNames(myConversations)[item];
-					// var ulItems = function (arg) {
-					//  	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-     //        				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
-     //        				// console.log(myConversations[arg][i]["message"]);
-     //        			};
-					// };
+					var ulItems = function (arg) {
+					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
+            				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
+            				console.log(myConversations[arg][i]["message"]);
+            			};
+					};
 					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' +
-					 for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				return '<li class="list-group">' + myConversations[arg][i]["message"] + '</li>'
-            			} +
-					  '</ul>' + '</div>');
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + ulItems(title) + '</ul>' + '</div>');
 				});
 			},
 			error: function() {
