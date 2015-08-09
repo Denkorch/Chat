@@ -213,8 +213,8 @@ $(document).ready(function() {
 					var title = Object.getOwnPropertyNames(myConversations)[item];
 					var ulItems = function (arg) {
 					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
-            				console.log(myConversations[arg][i]["message"]);
+            				$(".msg-ul").append('<li class="list-group">' + '<span>' + myConversations[arg][i]["sender"] + 'sent to ' + myConversations[arg][i]["receiver"] + '</span>'
+            				 myConversations[arg][i]["message"] + '</li>');
             			};
 					};
 					$(".msg_form").css("display", "none");
