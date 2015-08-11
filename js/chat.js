@@ -224,7 +224,7 @@ $(document).ready(function() {
 				// 	$(".msg_form").css("display", "none");
 				// 	$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + '</ul>' + '</div>');
 				// 	ulItems(title);
-				});
+				// });
 			},
 			error: function() {
 				alert('SendMessage: Ошибка доступа к базе!');
