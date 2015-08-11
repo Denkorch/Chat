@@ -179,22 +179,7 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	var conv = [];
-            	var count = 0;
-            	for (var i = 0; i < data.length; i++) {
-            		if (data[i]["name_sender"] !== getCookie("userName")) {
-            			for (var i = 0; i < conv.length; i++) {
-            				if (conv[count] !== data[i]["name_sender"]) {
-            					conv[count] = data[i]["name_sender"];
-            				};
-            			};
-
-            		};
-            		count++;
-            	};
-            	for (var i = 0; i < conv.length; i++) {
-            		$('.message-list').append('<li class="list-group-item li-message-list">' + conv[i] + '</li>');
-            	};
+            	
             	
 
     //         	var myConversations = {};
