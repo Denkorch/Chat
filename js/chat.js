@@ -179,46 +179,51 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	var myConversations = {};
-            	function messages (arg) {
-            					var obj = {};
-            					var count = 0;
-            					for (var i = 0; i < data.length; i++) {
-            						if (data[i].name_sender == arg) {
-            							obj[count] = {
-            								"message": data[i].text,
-            								"date": data[i].create_date,
-            								"sender": data[i].name_sender,
-            								"receiver": data[i].name_recipient,
-            							}
-            							count++;
-            						};
-            					};
-            					return obj;
-            				};
             	for (var i = 0; i < data.length; i++) {
-            		var name = data[i].name_sender;
-            		if (!(name in myConversations)) {
-            				// myConversations[name] = name;
-            				myConversations[name] = messages(name);
-            			};
-				};
-				for (var i = 0; i < Object.keys(myConversations).length; i++) {
-            		$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
+            		if (data[i]["name_sender"] !== getCookie("userName")) {
+            			$('.message-list').append('<li class="list-group-item li-message-list">' + data[i]["name_sender"] + '</li>');
+            		};
             	};
-				console.log(myConversations);
-				$( ".li-message-list" ).on( "click", function() {
-					$(".msg-area").empty();
-					var item = $(this).index()-1;
-					var title = Object.getOwnPropertyNames(myConversations)[item];
-					var ulItems = function (arg) {
-					 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
-            				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
-            			};
-					};
-					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + '</ul>' + '</div>');
-					ulItems(title);
+
+    //         	var myConversations = {};
+    //         	function messages (arg) {
+    //         					var obj = {};
+    //         					var count = 0;
+    //         					for (var i = 0; i < data.length; i++) {
+    //         						if (data[i].name_sender == arg) {
+    //         							obj[count] = {
+    //         								"message": data[i].text,
+    //         								"date": data[i].create_date,
+    //         								"sender": data[i].name_sender,
+    //         								"receiver": data[i].name_recipient,
+    //         							}
+    //         							count++;
+    //         						};
+    //         					};
+    //         					return obj;
+    //         				};
+    //         	for (var i = 0; i < data.length; i++) {
+    //         		var name = data[i].name_sender;
+    //         		if (!(name in myConversations)) {
+    //         				myConversations[name] = messages(name);
+    //         			};
+				// };
+				// for (var i = 0; i < Object.keys(myConversations).length; i++) {
+    //         		$('.message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(myConversations)[i] + '</li>');
+    //         	};
+				// console.log(myConversations);
+				// $( ".li-message-list" ).on( "click", function() {
+				// 	$(".msg-area").empty();
+				// 	var item = $(this).index() - 1;
+				// 	var title = Object.getOwnPropertyNames(myConversations)[item];
+				// 	var ulItems = function (arg) {
+				// 	 	for (var i = 0; i < Object.keys(myConversations[arg]).length; i++) {
+    //         				$(".msg-ul").append('<li class="list-group">' + myConversations[arg][i]["message"] + '</li>');
+    //         			};
+				// 	};
+				// 	$(".msg_form").css("display", "none");
+				// 	$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + '</ul>' + '</div>');
+				// 	ulItems(title);
 				});
 			},
 			error: function() {
