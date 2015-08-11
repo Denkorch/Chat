@@ -182,6 +182,7 @@ $(document).ready(function() {
             	for (var i = 0; i < data.length; i++) {
             		if (data[i]["name_sender"] !== getCookie("userName")) {
             			$('.message-list').append('<li class="list-group-item li-message-list">' + data[i]["name_sender"] + '</li>');
+            			i == data.length;
             		};
             	};
 
