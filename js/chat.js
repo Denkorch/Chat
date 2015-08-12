@@ -182,7 +182,10 @@ $(document).ready(function() {
             	var inboxList = {};
             	for (var i = 0; i < data.length; i++) {
             		var name = data[i].name_sender;
-            		if (!(name in inboxList) && (name != getCookie("userName"))) {
+            		if (!(name in inboxList) && name == getCookie("userName")) {
+            			name = data[i].receiver;
+            			inboxList[name] = data[i].id_recipient;
+            		} else if (!(name in inboxList) && (name != getCookie("userName"))) {
             				inboxList[name] = data[i].id_sender;
             			};
 				};
