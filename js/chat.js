@@ -196,7 +196,7 @@ $(document).ready(function() {
 
             	$( ".li-message-list" ).on( "click", function() {
 					$(".msg-area").empty();
-					var item = $(this).index() - 1;
+					var item = $(this).index();
 					var title = Object.getOwnPropertyNames(inboxList)[item];
 					var id = inboxList[title];
 					alert(id);
