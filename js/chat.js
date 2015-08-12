@@ -194,6 +194,24 @@ $(document).ready(function() {
             		$('.ul-message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(inboxList)[i] + '</li>');
             	};
 
+            	$( ".li-message-list" ).on( "click", function() {
+					$(".msg-area").empty();
+					var item = $(this).index() - 1;
+					var title = Object.getOwnPropertyNames(inboxList)[item];
+					var id = inboxList[item];
+					var ulItems = function (arg) {
+					 	for (var i = 0; i < data.length; i++) {
+					 		if (data[i]["id_recipient"] == id || data[i]["id_sender"] == id) {
+					 			$(".msg-ul").append('<li class="list-group">' + data[i]["text"] + '</li>');
+					 		};
+            				//$(".msg-ul").append('<li class="list-group">' + inboxList[arg][i]["message"] + '</li>');
+            			};
+					};
+					$(".msg_form").css("display", "none");
+					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + '</ul>' + '</div>');
+					ulItems(title);
+				});
+
             	console.log(inboxList);
             	
 
