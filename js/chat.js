@@ -198,7 +198,7 @@ $(document).ready(function() {
 					$(".msg-area").empty();
 					var item = $(this).index() - 1;
 					var title = Object.getOwnPropertyNames(inboxList)[item];
-					var id = inboxList["test"];
+					var id = inboxList[title];
 					alert(id);
 					var ulItems = function (arg) {
 					 	for (var i = 0; i < data.length; i++) {
