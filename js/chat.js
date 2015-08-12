@@ -183,7 +183,7 @@ $(document).ready(function() {
             	for (var i = 0; i < data.length; i++) {
             		var name = data[i].name_sender;
             		if (!(name in inboxList) && name == getCookie("userName")) {
-            			name = data[i].receiver;
+            			name = data[i].name_recipient;
             			inboxList[name] = data[i].id_recipient;
             		} else if (!(name in inboxList) && (name != getCookie("userName"))) {
             				inboxList[name] = data[i].id_sender;
