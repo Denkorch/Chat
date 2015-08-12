@@ -179,7 +179,14 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	
+            	var inboxList = {};
+            	for (var i = 0; i < data.length; i++) {
+            		var name = data[i].name_sender;
+            		if (!(name in inboxList) && (name != getCookie("userName"))) {
+            				inboxList[name] = data[i].id_sender;
+            			};
+				};
+            	console.log(inboxList);
             	
 
     //         	var myConversations = {};
