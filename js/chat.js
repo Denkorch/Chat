@@ -199,7 +199,6 @@ $(document).ready(function() {
 					var item = $(this).index();
 					var title = Object.getOwnPropertyNames(inboxList)[item];
 					var id = inboxList[title];
-					alert(id);
 					var ulItems = function (arg) {
 					 	for (var i = 0; i < data.length; i++) {
 					 		if (data[i]["id_recipient"] == id || data[i]["id_sender"] == id) {
