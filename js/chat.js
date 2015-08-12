@@ -179,9 +179,7 @@ $(document).ready(function() {
             },
             success: function(data){
             	console.log(data);
-            	for (var i = 0; i < data.length; i++) {
-            		console.log(data[i]["name_sender"]);
-            	};
+            	console.log(Object.keys(data));
             	
             	
 
