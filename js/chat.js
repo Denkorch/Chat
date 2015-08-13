@@ -189,6 +189,7 @@ $(document).ready(function() {
             				inboxList[name] = data[i].id_sender;
             			};
 				};
+				console.log(JSON.stringify(inboxList));
 				$('.message-list').append('<ul class="list-group ul-message-list"></ul>');
 				for (var i = 0; i < Object.keys(inboxList).length; i++) {
             		$('.ul-message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(inboxList)[i] + '</li>');
