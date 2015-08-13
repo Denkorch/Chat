@@ -190,6 +190,7 @@ $(document).ready(function() {
             			};
 				};
 				console.log(JSON.stringify(inboxList));
+				console.log(JSON.stringify(data));
 				$('.message-list').append('<ul class="list-group ul-message-list"></ul>');
 				for (var i = 0; i < Object.keys(inboxList).length; i++) {
             		$('.ul-message-list').append('<li class="list-group-item li-message-list">' + Object.getOwnPropertyNames(inboxList)[i] + '</li>');
