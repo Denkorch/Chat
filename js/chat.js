@@ -204,12 +204,15 @@ $(document).ready(function() {
 					var ulItems = function (arg) {
 					 	for (var i = 0; i < data.length; i++) {
 					 		if (data[i]["id_recipient"] == id || data[i]["id_sender"] == id) {
-					 			$(".msg-ul").append('<li class="list-group">' + data[i]["text"] + '</li>');
+					 			$(".uiList").append('<li class="MessageGroupItem clearfix">' + '<div class="clerfix">' +
+                                 '<div class="_date">' + data[i]["create_date"] + '</div>' +
+                                 '<div class="messageItem">' + '<strong>' + data[i]["name_sender"] + '</strong>' + '<div class="messageText">' + data[i]["text"] + '</div>' + '</div>' +
+                                  '</div>' + '</li>');
 					 		};
             			};
 					};
 					$(".msg_form").css("display", "none");
-					$(".msg-area").append('<div class="well well-lg">' + '<ul class="list-group msg-ul">' + '</ul>' + '</div>');
+					$(".msg-area").append('<div class="uiScrollableAreaContent">' + '<ul class="uiList">' + '</ul>' + '</div>');
 					ulItems(title);
 				});
 
@@ -266,5 +269,3 @@ $(document).ready(function() {
 		$('.message-list').css("display", "block");
 
 	});
-
-});

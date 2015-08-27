@@ -7,6 +7,16 @@
 	margin-right: 20px;
 }*/
 
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
 .clear{
 	clear: both;
 }
@@ -64,6 +74,10 @@ p.log {
 /*js styles*/
 .list-group-item {
 	position: relative;
+}
+
+.msg-area {
+	
 }
 
 span.status {
