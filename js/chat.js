@@ -269,3 +269,4 @@ $(document).ready(function() {
 		$('.message-list').css("display", "block");
 
 	});
+});
