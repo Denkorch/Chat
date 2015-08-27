@@ -17,6 +17,14 @@
     visibility: hidden;
 }
 
+ul {
+	list-style-type: none;
+}
+
+._date {
+	float: right;
+}
+
 .clear{
 	clear: both;
 }
